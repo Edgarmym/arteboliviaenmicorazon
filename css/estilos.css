@@ -33,7 +33,7 @@ header .contenedor {
 }
 
 header .logotipo {
-	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif', cursive;
 	font-weight: normal;
 	color: var(--amarrillo);
 	font-size: 40px;
@@ -55,7 +55,7 @@ header nav a.activo {
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .100) 0%, rgba(0,0,0,.100) 100%), url(img/backdrop.jpg);
+	background: linear-gradient(rgba(0, 0, 0, .100) 0%, rgba(0,0,0,.100) 100%), url(../img/backdrop.jpg);
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;
@@ -104,9 +104,32 @@ header nav a.activo {
 .pelicula-principal .boton i {
 	margin-right: 1.25em;
 }
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores button {
+	background: #fff;
+	height: 3px;
+	width :10Px;
+	cursor:pointer;
+	border:none;
+	margin-right: 2px;
+}
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.activo {
+	background: red;
+}
+
 /* -------------------- contenedor proncipal y flechas --------*/
 .peliculas-recomendadas {
-	margin-bottom:70px;
+	margin-bottom: 70px;
 }
 .peliculas-recomendadas .contenedor-principal {
 	display: flex;
@@ -114,7 +137,7 @@ header nav a.activo {
 	position: relative;
 }
 .peliculas-recomendadas .contenedor-principal .flecha-izquierda,
-.peliculas-recomendadas .contenedor-principal .flecha-derecha{
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
 	position: absolute;
 	border:none;
 	background: rgba(0,0,0, 0.3);
@@ -128,14 +151,19 @@ header nav a.activo {
 	z-index:500;
 	transition: .2s ease all;
 }
-.peliculas-recomendadas .contenedor-principal .flecha-izquierda{
-	left:0;
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda:hover,
+.peliculas-recomendadas .contenedor-principal .flecha-derecha:hover {
+	background: rgba(0,0,0, 0.9);
 }
-.peliculas-recomendadas .pelicula-principal .flecha-derecha {
+.peliculas-recomendadas .contenedor-principal .flecha-izquierda {
+	left: 0;
+}
+.peliculas-recomendadas .contenedor-principal .flecha-derecha {
 	right: 0;
 }
+/* ----------------carousel-----------------------*/
 
-.peliculas-recomendadas .contenedor-carousel{
+.peliculas-recomendadas .contenedor-carousel {
 	width: 100%;
 	padding: 20px 0;
 	overflow: hidden;
@@ -156,8 +184,8 @@ header nav a.activo {
 }
 
 
-.peliculas-recomendadas .contenedor-carousel .carousel .pelicula  img{
-	width:100%;
+.peliculas-recomendadas .contenedor-carousel .carousel .pelicula  img {
+	width: 100%;
 	vertical-align: top;
 }
 
@@ -185,14 +213,14 @@ header nav a.activo {
 		overflow: visible;
 	} 
 
-	.peliculas-recomendadas .contenedor-carousel .carousel{
-		display:grid;
-		grid-template-columns: repeat(3,1fr);
+	.peliculas-recomendadas .contenedor-carousel .carousel {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 	}
 	.peliculas-recomendadas .indicadores,
 	.peliculas-recomendadas .flecha-izquierda,
-	.peliculas-recomendadas .flecha-derecha{
+	.peliculas-recomendadas .flecha-derecha {
 		display: none;
 	}
 }
